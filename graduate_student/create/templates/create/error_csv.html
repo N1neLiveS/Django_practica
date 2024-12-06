@@ -1,0 +1,20 @@
+{% extends 'main/global_pattern.html' %}
+{% load static %}
+
+{% block title %} Загрузка {% endblock %}
+
+{% block content %}
+
+<div class="features">
+    <p>Произошла ошибка при импорте!</p>
+    <p>Проверте csv файл на правильность заполнения</p>
+    <a href="{% url 'home' %}">
+        <button type="submit" class="btn-submit">На главную</button>
+    </a>
+    <p>или попробовать снова?</p>
+    <a href="{% url 'upload_csv' %}">
+        <button type="submit" class="btn-submit">Импорт csv</button>
+    </a>
+</div>
+
+{% endblock %}

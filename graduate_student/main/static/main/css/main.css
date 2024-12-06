@@ -1,0 +1,47 @@
+body{
+    background: url('https://static.tildacdn.com/tild3564-3630-4333-b465-376137646463/bilimalmaty_fon2.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+
+main .features {
+    float: left;
+    margin-top: -10px;
+    width: 75%;
+    position: relative;
+    left: 35px;
+}
+
+main .features .header {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+main .features h1 {
+    font-size: 50px;
+    text-align: left;
+    margin-right: auto;
+}
+
+main .features .pdf-form {
+    position: absolute;
+    right: 0;
+}
+
+main .features .pdf-button {
+    font-size: 18px;
+    padding: 10px 20px;
+}
+
+main .features p {
+    max-width: 1400px;
+    font-size: 18px;
+    position: relative;
+    margin: 25px auto;
+}
+
+main .features li {
+    font-size: 18px;
+    position: relative;
+    margin: 25px auto;
+}

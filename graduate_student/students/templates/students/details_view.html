@@ -1,0 +1,17 @@
+{% extends 'main/global_pattern.html' %}
+{% load static %}
+
+{% block title %} {{ graduate.full_name }} {% endblock %}
+
+{% block content %}
+    <div class="features">
+        <div class="header">
+            <h1>{{ graduate.full_name }}</h1>
+            <form action="{% url 'export_personal_pdf' pk=graduate.pk %}" method="get" class="pdf-form">
+                <button type="submit" class="pdf-button">Скачать PDF</button>
+            </form>
+        </div>
+        <a href="{% url 'personal_details' pk=graduate.pk %}"><li><i>Личные данные</i></li></a>
+        <a href="{% url 'employment_details' pk=graduate.pk %}"><li><i>Данные по трудоустройству</i></li></a>
+    </div>
+{% endblock %}

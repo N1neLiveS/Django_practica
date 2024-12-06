@@ -1,0 +1,25 @@
+{% extends 'main/global_pattern.html' %}
+
+{% block title %}Создание записи выпускника{% endblock %}
+
+{% block content %}
+
+<form method="post" class="form-container">
+    <h1>Создание записи трудовой истории выпускника</h1>
+    {% csrf_token %}
+    <div class="form-group">
+        {{ form.graduate.label_tag }} {{ form.graduate }}
+    </div>
+    <div class="form-group">
+        {{ form.employment_placework.label_tag }} {{ form.employment_placework }}
+    </div>
+    <div class="form-group">
+        {{ form.employment_status.label_tag }} {{ form.employment_status }}
+    </div>
+    <div class="form-group">
+        {{ form.change_date.label_tag }} {{ form.change_date }}
+    </div>
+    <button type="submit" class="btn-submit">Сохранить</button>
+</form>
+
+{% endblock %}

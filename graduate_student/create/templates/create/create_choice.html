@@ -1,0 +1,17 @@
+{% extends 'main/global_pattern.html' %}
+
+{% block title %}Выбор создания записи{% endblock %}
+
+{% block content %}
+<div class="features">
+    <h1>Выберите действие</h1>
+    <a href="{% url 'student_create' %}" class="choice-button"><li><i>Создать запись выпускника</i></li></a>
+    <a href="{% url 'history_create' %}" class="choice-button"><li><i>Создать трудовую историю выпускника</i></li></a>
+    <a href="{% url 'company_create' %}" class="choice-button"><li><i>Создать запись новой компании</i></li></a>
+    <div class="import_csv">
+    <a href="{% url 'upload_csv' %}">
+        <button type="submit" class="btn-submit">Импортировать CSV файл</button>
+    </a>
+</div>
+</div>
+{% endblock %}

@@ -1,0 +1,46 @@
+{% extends 'main/global_pattern.html' %}
+{% load static %}
+
+{% block title %} Предприятия {% endblock %}
+
+{% block content %}
+
+    <h1>Список предприятий</h1>
+
+    <div class="search-box">
+        <form method="get">
+            <input type="text" name="q" placeholder="Введите запрос..." value="{{ request.GET.q }}">
+            <input type="submit" value="Поиск">
+        </form>
+    </div>
+
+    <div class="persons">
+        {% if page_obj %}
+            {% for el in page_obj %}
+                <div>
+                    <a href="{% url 'company-detail' el.id %}">{{ el.name }}</a>
+                </div>
+            {% endfor %}
+        {% else %}
+            <p>У вас нет записей!</p>
+        {% endif %}
+    </div>
+
+    <div class="pagination">
+        <span class="step-links">
+            {% if page_obj.has_previous %}
+                <a href="?page=1">&laquo; первая</a>
+                <a href="?page={{ page_obj.previous_page_number }}">предыдущая</a>
+            {% endif %}
+
+            <span class="current">
+                Страница {{ page_obj.number }} из {{ page_obj.paginator.num_pages }}.
+            </span>
+
+            {% if page_obj.has_next %}
+                <a href="?page={{ page_obj.next_page_number }}">следующая</a>
+                <a href="?page={{ page_obj.paginator.num_pages }}">последняя &raquo;</a>
+            {% endif %}
+        </span>
+    </div>
+{% endblock %}

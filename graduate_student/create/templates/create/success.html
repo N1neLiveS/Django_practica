@@ -1,0 +1,15 @@
+{% extends 'main/global_pattern.html' %}
+{% load static %}
+
+{% block title %} Загрузка {% endblock %}
+
+{% block content %}
+
+<div class="features">
+    <p>Импорт прошёл удачно!</p>
+    <a href="{% url 'home' %}">
+        <button type="submit" class="btn-submit">На главную</button>
+    </a>
+</div>
+
+{% endblock %}

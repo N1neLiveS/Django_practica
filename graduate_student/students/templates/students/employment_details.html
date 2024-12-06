@@ -1,0 +1,18 @@
+{% extends 'main/global_pattern.html' %}
+{% load static %}
+
+{% block title %} {{ graduate.full_name }} {% endblock %}
+
+{% block content %}
+<div class="data_list">
+    <h1>{{ graduate.full_name }}</h1>
+    {% for employment in employment_history|dictsort:"change_date" reversed %}
+        <div>
+            <p>{% if employment.change_date %}<strong>{{ employment.change_date }} - {% endif %}{{ employment.employment_placework|default:"Поставлен на учёт" }} - {{ employment.employment_status }}</strong></p>
+        </div>
+    {% empty %}
+        <p>Нет данных о трудовой истории</p>
+    {% endfor %}
+    <p><strong>Наличие трудовой книжки: </strong>{{ graduate.employment_book|yesno:"Имеется,Не имеется" }}</p>
+</div>
+{% endblock %}

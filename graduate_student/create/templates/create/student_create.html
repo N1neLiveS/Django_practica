@@ -1,0 +1,58 @@
+{% extends 'main/global_pattern.html' %}
+
+{% block title %}Создание записи выпускника{% endblock %}
+
+{% block content %}
+
+<form method="post" class="form-container">
+    <h1>Создание записи выпускника</h1>
+    {% csrf_token %}
+    <div class="form-group">
+        {{ form.full_name.label_tag }} {{ form.full_name }}
+    </div>
+    <div class="form-group">
+        {{ form.date_of_birth.label_tag }} {{ form.date_of_birth }}
+    </div>
+    <div class="form-group">
+        {{ form.gender.label_tag }} {{ form.gender }}
+    </div>
+    <div class="form-group">
+        {{ form.citizenship.label_tag }} {{ form.citizenship }}
+    </div>
+    <div class="form-group">
+        {{ form.address.label_tag }} {{ form.address }}
+    </div>
+    <div class="form-group">
+        {{ form.phone_number.label_tag }} {{ form.phone_number }}
+    </div>
+    <div class="form-group">
+        {{ form.email.label_tag }} {{ form.email }}
+    </div>
+    <div class="form-group">
+        {{ form.snils.label_tag }} {{ form.snils }}
+    </div>
+    <div class="form-group">
+        {{ form.study_direction_code.label_tag }} {{ form.study_direction_code }}
+    </div>
+    <div class="form-group">
+        {{ form.study_direction_name.label_tag }} {{ form.study_direction_name }}
+    </div>
+    <div class="form-group">
+        {{ form.study_direction_profile.label_tag }} {{ form.study_direction_profile }}
+    </div>
+    <div class="form-group">
+        {{ form.enrollment_year.label_tag }} {{ form.enrollment_year }}
+    </div>
+    <div class="form-group">
+        {{ form.graduation_year.label_tag }} {{ form.graduation_year }}
+    </div>
+    <div class="form-group">
+        {{ form.education_form.label_tag }} {{ form.education_form }}
+    </div>
+    <div class="form-group">
+        {{ form.employment_book.label_tag }} {{ form.employment_book }}
+    </div>
+    <button type="submit" class="btn-submit">Сохранить</button>
+</form>
+
+{% endblock %}

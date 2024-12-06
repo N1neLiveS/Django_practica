@@ -1,0 +1,17 @@
+{% extends 'main/global_pattern.html' %}
+{% load static %}
+
+{% block title %} {{ article.name }} {% endblock %}
+
+{% block content %}
+    <div class="data_list">
+        <h1>Информация о предприятии</h1>
+        <p><strong>Название предприятия:</strong> {{ article.name }} </p>
+        <p><strong>Адрес предприятия: </strong> {{ article.address }} </p>
+        <p><strong>ИНН предприятия: </strong> {{ article.inn }} </p>
+        <p><strong>ОКВЭД предприятия: </strong> {{ article.okved }} </p>
+        <p><strong>Номер телефона предприятия: </strong> {{ article.phone_number }} </p>
+        <p><strong>E-mail предприятия: </strong> {{ article.email }} </p>
+        <p><strong>Сайт предприятия: </strong> <a href="{{ article.website }}">{{ article.website }}</a> </p>
+    </div>
+{% endblock %}

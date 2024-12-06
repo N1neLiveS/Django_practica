@@ -1,0 +1,24 @@
+{% extends 'main/global_pattern.html' %}
+{% load static %}
+
+{% block title %} {{ graduate.full_name }} {% endblock %}
+
+{% block content %}
+    <div class="data_list">
+    <h1>Информация о выпускнике</h1>
+    <p><strong>ФИО:</strong> {{ graduate.full_name }}</p>
+    <p><strong>Дата рождения:</strong> {{ graduate.date_of_birth }}</p>
+    <p><strong>Пол:</strong> {{ graduate.get_gender_display }}</p>
+    <p><strong>Гражданство:</strong> {{ graduate.citizenship }}</p>
+    <p><strong>Адрес проживания:</strong> {{ graduate.address }}</p>
+    <p><strong>Телефон:</strong> {{ graduate.phone_number }}</p>
+    <p><strong>Электронная почта:</strong> {{ graduate.email }}</p>
+    <p><strong>СНИЛС:</strong> {{ graduate.snils }}</p>
+    <p><strong>Код направления подготовки:</strong> {{ graduate.study_direction_code }}</p>
+    <p><strong>Название направления подготовки:</strong> {{ graduate.study_direction_name }}</p>
+    <p><strong>Профиль направления подготовки:</strong> {{ graduate.study_direction_profile }}</p>
+    <p><strong>Год поступления:</strong> {{ graduate.enrollment_year }}</p>
+    <p><strong>Год окончания:</strong> {{ graduate.graduation_year }}</p>
+    <p><strong>Форма обучения:</strong> {{ graduate.get_education_form_display }}</p>
+    </div>
+{% endblock %}
